@@ -6,7 +6,7 @@
 #include "states/proc_start.h"
 #include "states/end.h"
 
-SimpleFSM fsm;
+extern SimpleFSM fsm;
 
 enum triggers
 {

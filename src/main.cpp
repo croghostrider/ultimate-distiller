@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include "main.h"
 
+SimpleFSM fsm;
+
 State s[] = {
     State("start", start_entry, start_ongoing, start_exit),
     State("process start", proc_start_entry, proc_start_ongoing, proc_start_exit),

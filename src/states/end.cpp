@@ -8,6 +8,7 @@ void end_entry()
 
 void end_ongoing()
 {
+    Serial.print(".");
 }
 
 void end_exit()

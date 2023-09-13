@@ -1,7 +1,9 @@
 #include <Arduino.h>
 #include "main.h"
+#include "gui.h"
 
 SimpleFSM fsm;
+uint32_t uptime_counter = 0;
 
 State s[] = {
     State("start", start_entry, start_ongoing, start_exit),
@@ -21,16 +23,25 @@ int num_transitions = sizeof(transitions) / sizeof(Transition);
 
 void setup()
 {
-  Serial.begin(9600);
+  randomSeed(0);
+  Serial.begin(115200);
   while (!Serial)
   {
-    delay(300);
   }
+  if (SLOW_BOOT)
+  {
+    delay(5000); // Delay booting to give time to connect a serial monitor
+  }
+  connectWifi();
+  WiFi.setSleep(false); // For the ESP32: turn off sleeping to increase UI responsivness (at the cost of power use)
+  setUpUI();
+
   fsm.add(transitions, num_transitions);
   fsm.setInitialState(&s[0]);
 }
 
 void loop()
 {
+  uiLoop();
   fsm.run(1000);
 }

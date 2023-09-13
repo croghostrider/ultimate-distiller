@@ -10,10 +10,12 @@ void start_entry()
 void start_ongoing()
 {
     // TODO: check the sensors
+    Serial.print(".");
     fsm.trigger(next_state);
 }
 
 void start_exit()
 {
-    Serial.println("Exiting State: start");
+    Serial.println(" ");
+    Serial.println(" Exiting State: start");
 }

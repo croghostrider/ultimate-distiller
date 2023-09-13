@@ -6,8 +6,7 @@ SimpleFSM fsm;
 uint32_t uptime_counter = 0;
 
 State s[] = {State("start", start_entry, start_ongoing, start_exit),
-             State("process start", proc_start_entry, proc_start_ongoing,
-                   proc_start_exit),
+             State("process start", proc_start_entry, proc_start_ongoing, proc_start_exit),
              State("warming up", NULL, NULL),
              State("initial stabilization", NULL, NULL),
              State("collection fraction", NULL, NULL),

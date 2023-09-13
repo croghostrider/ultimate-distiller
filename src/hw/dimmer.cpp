@@ -7,8 +7,8 @@ dimmerLamp dimmer(outputPin, zerocross); // initialase port for dimmer for
 int outVal = 0;
 
 void setup2() {
-  dimmer.begin(NORMAL_MODE,
-               OFF); // dimmer initialisation: name.begin(MODE, STATE)
+  // dimmer initialisation: name.begin(MODE, STATE)
+  dimmer.begin(NORMAL_MODE, OFF);
 }
 
 void loop2() {

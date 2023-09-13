@@ -37,12 +37,8 @@
  *  +---------------+-------------------------+-------------------------+
  */
 
-#include <RBDdimmer.h> //
-
-// #define USE_SERIAL  SerialUSB //Serial for boards whith USB serial port
-#define USE_SERIAL Serial
-#define outputPin 12
-#define zerocross 5 // for boards with CHANGEBLE input pins
+#include <RBDdimmer.h>
+#include "config.h"
 
 dimmerLamp dimmer(outputPin, zerocross); // initialase port for dimmer for ESP8266, ESP32, Arduino due boards
 
@@ -50,13 +46,11 @@ int outVal = 0;
 
 void setup2()
 {
-    USE_SERIAL.begin(9600);
     dimmer.begin(NORMAL_MODE, OFF); // dimmer initialisation: name.begin(MODE, STATE)
 }
 
 void loop2()
 {
     // outVal = map(analogRead(0), 1, 1024, 100, 0); // analogRead(analog_pin), min_analog, max_analog, 100%, 0%);
-    USE_SERIAL.println(outVal);
     dimmer.setPower(outVal); // name.setPower(0%-100%)
 }

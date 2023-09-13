@@ -1,5 +1,10 @@
 #include "hw/temp_sensor.h"
 
+// Create the MCP9808 temperature sensor object
+Adafruit_MCP9808 tempsensor_heating_element = Adafruit_MCP9808();
+Adafruit_MCP9808 tempsensor_tube_bottom = Adafruit_MCP9808();
+Adafruit_MCP9808 tempsensor_tube_top = Adafruit_MCP9808();
+
 float temperature_heating_element;
 float temperature_tube_bottom;
 float temperature_tube_top;

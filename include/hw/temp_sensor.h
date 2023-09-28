@@ -1,6 +1,7 @@
 #ifndef TEMP_SENSOR_H /* include guards */
 #define TEMP_SENSOR_H
 #include "Adafruit_MCP9808.h"
+#include <Wire.h>
 
 extern float temperature_heating_element;
 extern float temperature_tube_bottom;

@@ -13,6 +13,7 @@ void enterWifiDetailsCallback(Control *sender, int type);
 void textCallback(Control *sender, int type);
 void generalCallback(Control *sender, int type);
 void scrambleCallback(Control *sender, int type);
+void runProcCallback(Control *sender, int type);
 void updateCallback(Control *sender, int type);
 void getTimeCallback(Control *sender, int type);
 void graphAddCallback(Control *sender, int type);

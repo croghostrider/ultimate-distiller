@@ -33,11 +33,11 @@ void initializeTemperatureSensors() {
 
 void initializeSensor(Adafruit_MCP9808 &sensor, int address) {
   if (!sensor.begin(address)) {
-    Serial.println("Couldn't find MCP9808! Check your connections and verify "
-                   "the address is correct.");
-    while (1)
-      ;
+    Serial.print("Couldn't find MCP9808! Check your connections and verify the address: 0x");
+    Serial.print(address, HEX);
+    Serial.println(" is correct.");
+  } else {
+    sensor.wake(); // wake up, ready to read!
+    sensor.setResolution(3);
   }
-  sensor.wake(); // wake up, ready to read!
-  sensor.setResolution(3);
 }

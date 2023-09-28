@@ -14,6 +14,7 @@ void proc_start_entry() {
 
 void proc_start_ongoing() {
   if (temperature_tube_bottom > fabs(tempEndRectRazgon)) {
+    Serial.println("Entering State: process ongoing debug 1");
     fsm.trigger(next_state);
   }
 }
